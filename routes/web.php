@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -23,5 +24,6 @@ Route::get('/', function () {
 
 
 Route::get('/about', function () {
-    return view('about');
+    $articles = App\Article::all();
+    return view('about', ['articles' => $articles]);
 });
