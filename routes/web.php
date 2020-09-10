@@ -27,3 +27,8 @@ Route::get('/about', function () {
     $articles = App\Article::all();
     return view('about', ['articles' => $articles]);
 });
+
+Route::get('articles', 'ArticlesController@index');
+
+
+Route::get('articles/{id}', 'ArticlesController@index');
