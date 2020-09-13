@@ -1,7 +1,5 @@
 @extends('layout')
 
-
-
 @section('content')
 <div id="wrapper">
     <div id="page" class="container">
@@ -17,7 +15,7 @@
         </div>
         <div id="sidebar">
             <ul class="style1">
-                @foreach($article as 'articles')
+                @foreach($articles as $article)
                 <li class="first">
 
                     <h3><a href="">{{$article->title}}</a></h3>

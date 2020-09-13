@@ -1,6 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\DB;
+
 
 
 /*
@@ -14,9 +16,6 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-// Route::get('/', function () {
-//     return view('welcome');
-// });
 
 Route::get('/', function () {
     return view('index');
@@ -24,11 +23,19 @@ Route::get('/', function () {
 
 
 Route::get('/about', function () {
-    $articles = App\Article::all();
+    $articles = App\Article::all()->take(3);
+
+    // $articles = App\Article::get();
+
     return view('about', ['articles' => $articles]);
 });
 
-Route::get('articles', 'ArticlesController@index');
+
+Route::get('articles/create', 'ArticlesController@create');
+
+Route::post('/articles', 'ArticlesController@store');
+
+Route::get('articles', 'ArticlesController@index')->name('articles');
 
 
-Route::get('articles/{id}', 'ArticlesController@index');
+Route::get('articles/{id}', 'ArticlesController@show');

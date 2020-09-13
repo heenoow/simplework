@@ -8,8 +8,12 @@
     <meta name="keywords" content="" />
     <meta name="description" content="" />
     <link href="http://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,600,700,900" rel="stylesheet" />
-    <link href="css/default.css" rel="stylesheet" />
-    <link href="css/fonts.css" rel="stylesheet" />
+    <link href="/css/default.css" rel="stylesheet" />
+    <link href="/css/fonts.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+
+
+
 
 
 </head>
@@ -22,11 +26,12 @@
             </div>
             <div id="menu">
                 <ul>
-                    <li class="current_page_item"><a href="#" accesskey="1" title="">Homepage</a></li>
-                    <li><a href="#" accesskey="2" title="">Our Clients</a></li>
-                    <li><a href="#" accesskey="3" title="">About Us</a></li>
-                    <li class="current_page_item"><a href="/articles" accesskey="1" title="">Articles</a></li>
-                    <li><a href="#" accesskey="5" title="">Contact Us</a></li>
+                    <li class="{{Request::path()==='/' ? 'current_page_item' : ''}} "><a href="/" accesskey="1" title="">Homepage</a></li>
+                    <li class="{{Request::path()==='client' ? 'current_page_item' : ''}} "><a href="/client" accesskey="2" title="">Our Clients</a></li>
+                    <li class="{{Request::path()==='about' ? 'current_page_item' : ''}} "><a href="/about" accesskey="3" title="">About Us</a></li>
+                    <li class="{{Request::path()==='articles' ? 'current_page_item' : ''}} "><a href="/articles" accesskey="1" title="">Articles</a></li>
+                    <li class="{{Request::path()==='contact' ? 'current_page_item' : ''}} "><a href="/contact" accesskey="5" title="">Contact Us</a></li>
+
                 </ul>
             </div>
         </div>
